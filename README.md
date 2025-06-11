@@ -27,3 +27,8 @@ Enhance security knowledge reuse by providing a GenAI-powered interface that hel
 
 Executive-Ready Risk Reporting Support:
 Aid cybersecurity leadership in preparing board-level reports by transforming raw data and analyst input into structured narratives—always reviewed and approved by human experts before dissemination.
+
+Natural Language Access to Global Security Policies:
+Empower associates across functions to semantically search, navigate, and understand Global Information Security Policies using GenAI interfaces that interpret natural language queries—enhancing policy awareness, reducing compliance risk, and ensuring final interpretations remain with designated policy owners
+Accelerated Third-Party Security Assessment Review:
+Enable risk assessors to efficiently evaluate evidence submitted by third parties in security assessments by using GenAI to interpret, summarize, and assess the relevance of uploaded documents—reducing manual effort while ensuring final validation and risk judgment remains with security experts.
