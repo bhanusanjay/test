@@ -61,3 +61,12 @@ Enable risk assessors to efficiently evaluate evidence submitted by third partie
 | 10 | **LRRG Assistant**                                     | Simplify regulatory interpretation and mapping       | 🧠 Build (context-specific legal interpretations)                     | Pilot with Regulatory and Legal teams    | Real-time mapping to security controls       | Continuous regulation-tracking assistant                 |
 | 11 | **GenAI Governance & Explainability Toolkit**          | Trust, auditability, and safety of GenAI models      | 🔧 Build to align with internal model risk governance                 | Framework + Explainability API MVP       | Compliance dashboards for all models         | Full GenAI risk integration with AI governance functions |
 
+Product Development Guiding Principle
+“Build GenAI components only where vendor solutions don’t exist, are cost-prohibitive, or don’t integrate well with our context. Prioritize augmentation and orchestration of vendor tools rather than replication.”
+
+✅ Approach Applied in Roadmap
+Develop only where tailored integration, contextual grounding, or enterprise-specific logic is required.
+
+Where possible, orchestrate, extend, or augment vendor tools (e.g., Microsoft Defender, CrowdStrike, ServiceNow, Palo Alto Cortex XSOAR, etc.).
+
+Embed GenAI into internal processes or legacy tools where vendor coverage is weak.
