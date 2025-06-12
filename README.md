@@ -85,3 +85,19 @@ Embed GenAI into internal processes or legacy tools where vendor coverage is wea
 | 6 | **Inefficient Penetration Testing Workflow**                 | Pen testing teams spend excessive time on repetitive planning and documentation tasks.                         | GenAI assists with test plan creation, payload generation, and automated report summarization, freeing up experts to focus on deep technical work. |
 | 7 | **Regulatory Misalignment and Interpretation Errors (LRRG)** | Misinterpretation or delayed response to changing laws and regulations can result in compliance failures.      | GenAI interprets regulatory text and maps requirements to internal controls, supporting LRRG teams with real-time, contextual compliance insights. |
 
+
+Subject: Collaboration Opportunity: Ideation for 2026 GenAI Product Strategy in Cybersecurity
+
+Dear [Recipient's Name],
+
+I hope this message finds you well.
+
+I lead the GenAI Product Development team within Cybersecurity, where we focus on building AI-driven capabilities that enhance and integrate with our firm’s core security functions—including Cyber Threat Defense, Assurance, Cybercrime, and IAM. Over the past year, we have delivered targeted solutions that streamline threat triage, improve policy intelligence, and assist security analysts with decision-making at scale.
+
+As we begin shaping our 2026 product strategy, we are actively seeking input from key IAM stakeholders to ensure our future GenAI capabilities are aligned with real-world challenges and opportunities across the identity landscape.
+
+I would greatly value your perspective on potential use cases, pain points, or innovation areas where GenAI could support IAM operations, engineering, governance, or risk functions. We are especially keen to identify collaboration areas that complement existing vendor solutions while delivering differentiated internal value.
+
+Please let me know a convenient time for a brief discussion—or feel free to share your inputs over email.
+
+Looking forward to collaborating with you.
