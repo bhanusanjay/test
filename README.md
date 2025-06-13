@@ -108,7 +108,17 @@ Top 5 Strengths – Justifying “Exceeds Expectations”
 	3.	Exceptional Team Development and Mentorship: Proactively established a strong mentorship culture, acting as a coach to junior engineers. Directly contributed to accelerating skill growth, improving onboarding experiences, and increasing team confidence—evidenced by positive peer feedback and measurable improvement in team autonomy.
 	4.	Consistent, High-Quality Delivery: Delivered multiple high-impact features and releases on schedule and with high quality. Balanced hands-on involvement with team empowerment, maintaining velocity without compromising code quality or team morale.
 	5.	Innovative Contributor to GenAI Product Prototyping: Played a pivotal role in early-stage prototyping and strategy for GenAI-driven product development. Translated ambiguous product goals into actionable technical explorations, enabling faster validation and alignment with business stakeholders.
+1.	Exceptional Impact as a New Joiner: Quickly embedded within the organization and demonstrated strong situational leadership. Built deep cross-functional relationships in a short time, establishing trust with peers, stakeholders, and leadership—crucial for a high-stakes product area like cybersecurity and GenAI.
+	2.	Process Leadership in GenAI Product Development: Took initiative to streamline and improve several engineering and cross-functional processes related to GenAI-powered cybersecurity solutions. These improvements enhanced team efficiency, reduced ambiguity, and accelerated decision-making loops.
+	3.	Culture and Morale Catalyst: Played a key role in revitalizing team energy and confidence. Through empathetic communication, inclusive leadership, and recognition of team contributions, helped boost morale and cohesion in a period of organizational and technical transition.
+	4.	Strong Ownership and Initiative: Demonstrated high levels of ownership over key deliverables, showing a bias for action in ambiguous or undefined areas. Anticipated blockers and proactively engaged stakeholders to keep momentum high.
+	5.	Strategic Influence Beyond Core Role: Contributed valuable insights into broader product and technical strategy conversations. Helped position the team for success by aligning engineering execution with evolving business goals in the cybersecurity domain.
 
+⸻
+
+Development Opportunities
+	1.	Task Decomposition and Technical Communication: Needs to improve in breaking down complex technical work into smaller, actionable units that the broader development team can execute more independently. This will help reduce rework and enhance predictability.
+	2.	Delegation and Focus on Strategic Delivery: Should focus on letting go of some hands-on tasks and instead empower team members more deliberately. Delegating effectively will create bandwidth to focus on higher-leverage activities like roadmap execution, delivery planning, and stakeholder alignment.
 ⸻
 
 Development Opportunities
