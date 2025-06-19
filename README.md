@@ -215,3 +215,59 @@ Actively engaging with both teams to clarify ownership models, improve shared un
 Opportunity to formalize joint working agreements, update RACI matrices, and explore a federated data operating model to better support GenAI productization.
 
 Continued focus on building trust, aligning incentives, and facilitating cross-functional rituals to prevent friction from slowing down progress as the initiative scales.
+
+
+Here’s a subtle yet strategic way to use your **mid-term review** to initiate a **promotion conversation**, without directly asking for it. The key is to:
+
+* Reflect on the **strategic value** you’re delivering.
+* Show **readiness for larger responsibility**.
+* Lay out a **forward-looking plan** aligned with organizational priorities.
+* Create space for your manager to engage on your growth path.
+
+---
+
+**Suggested Framing for Your Mid-Term Review Document or Discussion:**
+
+---
+
+**Section: Strategic Focus and Achievements**
+
+Over the past months, I’ve focused on laying a strong foundation for our GenAI-driven Cybersecurity initiatives, a space where we are breaking new ground. This includes:
+
+* Setting the vision and architecture for AI-based controls and assessments.
+* Driving cross-functional alignment across Cybersecurity, IAM, and Compliance.
+* Leading early-stage ideation and delivery roadmaps with clear outcomes and governance models.
+
+This initiative is both high-impact and high-visibility, and I’ve ensured it reflects the larger goals of the bank in intelligent automation and cyber resilience.
+
+---
+
+**Section: Reflections and Development**
+
+Leading this program has required me to operate at a strategic intersection — not just on technology, but on organizational influence, risk posture, and long-term value realization. I’ve found myself engaging with stakeholders at all levels, anticipating enterprise-wide implications, and shaping direction beyond traditional delivery roles.
+
+This experience is helping me develop capabilities aligned with broader enterprise leadership — including sponsorship, enterprise communication, and change stewardship.
+
+---
+
+**Section: Looking Ahead**
+
+As we enter the second half of the year, I’m focused on the following priorities:
+
+1. **Expanding strategic influence** – engaging senior stakeholders to drive alignment and visibility.
+2. **Institutionalizing the GenAI program** – building long-term structures around risk, governance, and reuse.
+3. **Mentoring and scaling teams** – to drive sustainable innovation across Security tech stacks.
+4. **Sharpening executive readiness** – continuing to build leadership presence in cross-LOB forums and investing in enterprise-level skills.
+
+I’d welcome your guidance on how I can best contribute at a broader level as this program matures, and align my development to the strategic priorities of the leadership team.
+
+---
+
+This structure achieves three things:
+
+* **Subtly signals** you’re already performing beyond your current scope.
+* **Frames your growth** as a natural next step in service of enterprise value.
+* **Invites your boss to invest** in your progression — without explicitly saying “I want a promotion.”
+
+Let me know if you'd like to adapt this into an actual email or slide.
+
