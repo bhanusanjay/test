@@ -64,6 +64,10 @@ Communicating effectively with stakeholders and teams – a strength that enable
 Building a positive team culture – well-regarded by peers and direct reports.
 
 Contributing meaningfully to model governance and cross-team process improvements.
+Maintaining strong leadership in talent acquisition efforts, effectively managing the interview process and onboarding of contractors to build a capable, cohesive team.
+
+Fostering collaboration and integration between permanent staff and contractors, ensuring smooth team dynamics and productivity.
+Continue taking initiative in knowledge sharing by presenting at DevCon, which enhances team visibility and cross-team learning.
 
 
 Pardeep 
