@@ -109,6 +109,8 @@ Staying curious and up-to-date with emerging tools and practices in the GenAI sp
 
 Ricardo 
 
+Thank you for making a smooth and impactful transition from the UK to Singapore and stepping into the manager role. Your strong technical skills, leadership presence, and the recent win at BlackHat Asia’s AI Red Teaming CTF have significantly elevated our credibility with stakeholders and the broader region. You’re well-liked and respected by the team, and your domain depth is clear. As you continue to grow in this role, I encourage you to be more vocal in PI planning, scrum ceremonies, and team meetings — your insights carry weight and will help shape direction.
+
 Start:
 
 Actively asserting your voice in peer forums — your perspectives are valuable, and your presence should feel equal at the table.
