@@ -41,6 +41,8 @@ Optimize model performance on real-world use cases (e.g., SOC alert triage, evid
 
 Gareth 
 
+Thank you for stepping up so seamlessly from an individual contributor role to a manager—this transition was very much anticipated given your capabilities. You’ve done a great job building a strong team culture rooted in trust and collaboration. As you continue to grow in this role, please trust that I am here to support and enable your success, not to be a bottleneck. Together, we can achieve even greater impact.
+
 Start:
 
 Applying practical, hands-on learning to deepen understanding of LLMs and GenAI technologies, especially now that access to models and tooling is available.
