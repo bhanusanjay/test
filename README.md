@@ -1,23 +1,17 @@
-While the majority of the initial team members came without prior GenAI experience, they have since been upskilled significantly across core areas including Retrieval-Augmented Generation (RAG), prompt engineering, LLM orchestration, and fine-tuning techniques. This has allowed us to build internal expertise while delivering against key milestones.
+RAG frameworks (LangChain, LlamaIndex)
 
-In parallel, we brought in 5 experienced GenAI engineers to accelerate delivery:
+Prompt engineering and evaluation (including guardrails and prompt injection resilience)
 
-1 FTE in Dublin and 1 FTE in India,
+Fine-tuning and PEFT techniques (LoRA, QLoRA, adapters)
 
-3 contractors in Dublin,
+LLMOps tooling and model lifecycle management
 
-Collectively, their skills span:
+Embedding models (text embedding, clustering for log analytics)
 
-RAG pipelines using LangChain and LlamaIndex
+Data pipeline engineering and vector database optimization (FAISS, Pinecone)
 
-Prompt templating and evaluation frameworks
+Secure API design for GenAI applications
 
-Fine-tuning and parameter-efficient tuning (LoRA, QLoRA)
+Token management, context optimization, and hallucination reduction
 
-LLMOps and deployment workflows
-
-Integration with enterprise APIs and data lakes
-
-The blended team is now well-positioned to support scalable, secure, and performant GenAI product delivery.
-
-Please let me know if you’d like a deeper dive on team capabilities or current focus areas.
+Frontend integration with LLM-powered interfaces
