@@ -501,3 +501,280 @@
 - **Coverage:** 90% of attack patterns from MITRE ATT&CK framework detectable
 - **Usability:** 80% threat hunter satisfaction with AI-generated insights
 - **Business Impact:** Quantifiable risk reduction and ROI demonstration
+- 
+
+# GenAI Cyber Threat Detection - 3-Month Prototype Stories
+
+## Epic 1: Data Foundation (Month 1)
+
+### Story 1: Basic OCSF Log Transformation
+**Title:** Convert Core Log Types to OCSF Using Simple GenAI Mapping
+
+**Description:** As a threat hunter, I need login and MFA logs converted to OCSF format so that I can work with standardized data for the prototype demonstration.
+
+**Acceptance Criteria:**
+- Transform login logs to OCSF Authentication events
+- Transform MFA logs with device mapping to OCSF format
+- Handle 3 main log sources (VPN, Virtual Desktop, MFA service)
+- 80% field mapping success rate (prototype quality)
+- Basic validation and error reporting
+
+**Dependencies:** 
+- Sample data dumps from Kafka
+- OCSF schema definitions
+
+**Assumptions:**
+- Working with static data dumps, not real-time streams
+- Sample data represents production log variety
+
+**Effort:** 2 weeks, 2 developers
+
+---
+
+### Story 2: Identity Entity Linking
+**Title:** Build Basic Identity Graph from User-Device-MFA Relationships
+
+**Description:** As a threat hunter, I need a simple identity graph showing user-device-MFA relationships so that I can understand entity connections in the prototype.
+
+**Acceptance Criteria:**
+- Link users to their primary devices based on login frequency
+- Connect users to MFA devices from mapping data
+- Create simple graph visualization (nodes and edges)
+- Handle basic entity resolution (same user, different usernames)
+- Export graph data for analysis
+
+**Dependencies:**
+- Story 1 completed
+- User-device mapping data available
+
+**Assumptions:**
+- Most users have 1-2 primary devices
+- MFA device mapping is relatively clean
+
+**Effort:** 2 weeks, 1 developer
+
+---
+
+## Epic 2: GenAI Query & Analysis (Month 2)
+
+### Story 3: Natural Language to Query Translation
+**Title:** Convert Simple Threat Hunting Questions to Elasticsearch Queries
+
+**Description:** As a threat hunter, I need to ask questions in plain English and get back working Elasticsearch queries so that I can focus on analysis rather than query syntax.
+
+**Acceptance Criteria:**
+- Handle 10 common hunting scenarios (e.g., "users logging in from new locations")
+- Generate working Elasticsearch queries with proper syntax
+- Support date ranges, user filtering, and basic aggregations
+- Show query preview before execution
+- Save successful query patterns
+
+**Example Queries to Support:**
+- "Show me users who logged in outside business hours last week"
+- "Find MFA failures followed by successful logins within 10 minutes"
+- "Users accessing from more than 3 different countries this month"
+
+**Dependencies:**
+- Elasticsearch with OCSF data indexed
+- OpenAI API integration
+
+**Assumptions:**
+- Threat hunters can express needs in simple natural language
+- 10 query types cover 80% of prototype demo needs
+
+**Effort:** 3 weeks, 2 developers
+
+---
+
+### Story 4: Behavioral Anomaly Detection
+**Title:** Detect Simple Login Pattern Anomalies Using ML Embeddings
+
+**Description:** As a threat hunter, I need automated detection of unusual login patterns so that I can identify potential security incidents without manual monitoring.
+
+**Acceptance Criteria:**
+- Create user behavior profiles from 30+ days of historical data
+- Detect anomalies in login timing, location, and device usage
+- Score anomalies as Low/Medium/High risk
+- Generate daily anomaly reports with top 20 unusual events
+- Provide simple explanations ("unusual login time for this user")
+
+**Dependencies:**
+- Historical login data (minimum 30 days)
+- Text embedding service operational
+
+**Assumptions:**
+- 30 days sufficient for basic behavioral profiling
+- Simple anomaly types provide prototype value
+
+**Effort:** 2 weeks, 2 developers
+
+---
+
+## Epic 3: AI-Powered Insights (Month 3)
+
+### Story 5: Automated Investigation Context
+**Title:** Enrich Security Events with Relevant Context Using RAG
+
+**Description:** As a threat hunter, I need security events automatically enriched with context so that I can quickly understand their significance during the prototype demo.
+
+**Acceptance Criteria:**
+- Enrich login anomalies with user profile information
+- Add recent related events (same user, same IP, same time window)
+- Include basic risk scoring based on user role and access level
+- Present context in clean, readable format
+- Support 5 main context types (user, device, location, time, related events)
+
+**Dependencies:**
+- Story 4 completed (anomaly detection)
+- User profile and role data available
+
+**Assumptions:**
+- Basic context types provide sufficient demo value
+- Simple RAG implementation meets prototype needs
+
+**Effort:** 2 weeks, 1 developer
+
+---
+
+### Story 6: GenAI Threat Summary Generation
+**Title:** Generate Plain-English Summaries of Security Findings
+
+**Description:** As a threat hunter, I need AI-generated summaries of security findings so that I can quickly understand and communicate threats to stakeholders.
+
+**Acceptance Criteria:**
+- Summarize daily anomaly findings in 2-3 sentences
+- Explain why events are suspicious in business terms
+- Highlight top 5 users/events requiring attention
+- Generate weekly trend summary (improving/worsening patterns)
+- Export summaries for reporting
+
+**Example Output:**
+- "John Smith showed unusual login patterns with 3 logins from new countries. This represents a 300% increase from his normal behavior and warrants investigation."
+
+**Dependencies:**
+- Stories 4-5 completed
+- OpenAI API for text generation
+
+**Assumptions:**
+- Simple summaries demonstrate GenAI value effectively
+- Threat hunters prefer plain English over technical details
+
+**Effort:** 2 weeks, 1 developer
+
+---
+
+### Story 7: Interactive Threat Hunting Dashboard
+**Title:** Web Dashboard for Exploring GenAI Threat Detection Results
+
+**Description:** As a threat hunter, I need an interactive dashboard to explore AI-generated findings so that I can effectively demonstrate the prototype capabilities.
+
+**Acceptance Criteria:**
+- Display top anomalies with risk scores and explanations
+- Show identity graph with suspicious relationships highlighted
+- Enable drill-down from summary to detailed events
+- Support natural language queries from the web interface
+- Export findings for further analysis
+- Mobile-responsive for demo flexibility
+
+**Dependencies:**
+- All previous stories completed
+- Web framework implementation
+
+**Assumptions:**
+- Dashboard is primary demo interface
+- Simple, clean UI more important than advanced features
+
+**Effort:** 3 weeks, 2 developers
+
+---
+
+## Epic 4: Demo Scenarios & Validation
+
+### Story 8: Prototype Validation Scenarios
+**Title:** Create Realistic Demo Scenarios with Known Threat Patterns
+
+**Description:** As a prototype team, we need realistic demo scenarios with planted threats so that we can validate the system works and prepare effective demonstrations.
+
+**Acceptance Criteria:**
+- Create 5 demo scenarios (account takeover, insider threat, impossible travel, etc.)
+- Plant known anomalies in test data
+- Validate system detects planted threats with reasonable accuracy
+- Prepare demo scripts showing system capabilities
+- Document limitations and future improvements
+
+**Demo Scenarios:**
+1. **Account Takeover:** User logs in from new country, different device, unusual hours
+2. **Insider Threat:** Employee accessing systems outside normal role, unusual data patterns
+3. **Impossible Travel:** Login from distant locations within short timeframe
+4. **MFA Bypass Attempt:** Multiple MFA failures followed by successful login
+5. **Shared Account Abuse:** Single account used by multiple people/devices
+
+**Dependencies:**
+- All technical stories completed
+- Test data with planted anomalies
+
+**Assumptions:**
+- Realistic scenarios demonstrate real-world value
+- Known threats validate system effectiveness
+
+**Effort:** 1 week, 1 developer + all team validation
+
+---
+
+## Implementation Timeline
+
+### Month 1: Foundation
+- **Week 1-2:** Story 1 (OCSF Transformation)
+- **Week 3-4:** Story 2 (Identity Graph)
+- **Parallel:** Infrastructure setup, data pipeline, OpenAI integration
+
+### Month 2: Core GenAI Features  
+- **Week 1-3:** Story 3 (Natural Language Queries)
+- **Week 3-4:** Story 4 (Anomaly Detection)
+- **Parallel:** Elasticsearch setup, embedding pipeline
+
+### Month 3: Integration & Demo
+- **Week 1-2:** Story 5 (Context Enrichment)
+- **Week 2-3:** Story 6 (Threat Summaries)
+- **Week 1-4:** Story 7 (Dashboard) - parallel development
+- **Week 4:** Story 8 (Demo Scenarios & Validation)
+
+## Team Allocation (6 Developers)
+
+**Backend/Data (3 developers):**
+- Data pipeline and OCSF transformation
+- Elasticsearch integration and query generation
+- ML/embedding pipeline for anomaly detection
+
+**AI/GenAI (2 developers):**
+- OpenAI API integration and prompt engineering
+- RAG implementation for context enrichment
+- Natural language processing and summary generation
+
+**Frontend/Integration (1 developer):**
+- Dashboard development
+- API integration and user interface
+- Demo preparation and validation scenarios
+
+## Success Metrics (Prototype Quality)
+
+**Technical:**
+- Transform 1000+ log entries to OCSF format
+- Generate 10+ query types from natural language
+- Detect 5+ anomaly types with reasonable accuracy
+- Response time <5 seconds for interactive queries
+
+**Demonstration:**
+- 5 complete demo scenarios working end-to-end
+- Clear before/after comparison showing GenAI value
+- Stakeholder-ready presentation materials
+- Documentation for future development phases
+
+## Key Prototype Limitations
+- Static data only (no real-time processing)
+- Limited to 10 query types and 5 anomaly types
+- Basic UI focused on demo rather than production use
+- No advanced ML optimization or model training
+- Simplified error handling and monitoring
+
+This scope provides a realistic 3-month prototype that demonstrates core GenAI capabilities while being achievable with your team size.
