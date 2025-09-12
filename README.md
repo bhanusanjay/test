@@ -1,4 +1,365 @@
+# Security Scan Integration Epic - Invicti & CheckMarx
 
+## Epic Overview
+Integrate the GenAI penetration testing assistant with Invicti (DAST) and CheckMarx (SAST) security scanning platforms to provide pre-assessment intelligence. The system will analyze automated security scan results to give penetration testers context-aware insights about application vulnerabilities, technology stacks, and security hotspots before manual testing begins.
+
+## High-Level Architecture
+
+```
+┌─────────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│ Invicti Database    │────│                  │────│  GenAI Assistant│
+│ (Web App Scans)     │    │  Scan Data       │    │  Chat Interface │
+└─────────────────────┘    │  Aggregation     │    └─────────────────┘
+                           │  Service         │
+┌─────────────────────┐    │                  │    ┌─────────────────┐
+│ CheckMarx Database  │────│                  │────│ Vector Store    │
+│ (Source Code Scans) │    └──────────────────┘    │ (Elasticsearch) │
+└─────────────────────┘                            └─────────────────┘
+           │                                                │
+           │                ┌─────────────────┐              │
+           └────────────────│ MongoDB         │──────────────┘
+                           │ (Scan Results,  │
+                           │  App Profiles)  │
+                           └─────────────────┘
+```
+
+## Business Context
+- **Pre-Assessment Intelligence**: Testers get comprehensive application security posture before starting manual testing
+- **Efficient Testing**: Focus manual efforts on areas not covered by automated scans or areas requiring deeper investigation
+- **Risk Prioritization**: Understand critical vulnerabilities and security hotspots to optimize testing time
+- **Technology Awareness**: Know the complete technology stack and associated common vulnerabilities
+
+## User Stories
+
+### Epic: Security Scan Intelligence Integration
+
+#### Story 1: Invicti Integration and Data Extraction
+**As a** system administrator  
+**I want** to establish integration with Invicti scanning platform  
+**So that** DAST (Dynamic Application Security Testing) results are available for penetration testing guidance
+
+**Acceptance Criteria:**
+- [ ] Secure API connection to Invicti platform established
+- [ ] Read-only database access configured with appropriate permissions
+- [ ] Data extraction pipeline pulls scan results, vulnerability details, and application profiles
+- [ ] Technology stack detection from Invicti scans (web servers, frameworks, databases)
+- [ ] Vulnerability categorization and severity mapping
+- [ ] Scan metadata captured (scan date, coverage, configuration)
+- [ ] Error handling for API rate limits and connection failures
+
+**Technical Details:**
+- **API Integration**: Invicti REST API for real-time scan results
+- **Database Schema**: Map Invicti's vulnerability tables, scan results, and application metadata
+- **Data Types**: Web vulnerabilities (XSS, SQLi, CSRF), infrastructure findings, SSL/TLS issues
+- **Sync Strategy**: Incremental sync based on scan completion timestamps
+
+#### Story 2: CheckMarx Integration and Source Code Analysis Data
+**As a** penetration tester  
+**I want** access to static code analysis results from CheckMarx  
+**So that** I understand code-level vulnerabilities and can plan targeted manual testing
+
+**Acceptance Criteria:**
+- [ ] Secure connection to CheckMarx platform (API and database)
+- [ ] SAST (Static Application Security Testing) results extraction
+- [ ] Code vulnerability mapping with file locations and line numbers
+- [ ] Technology stack identification from source code analysis
+- [ ] Security hotspot identification and risk scoring
+- [ ] Compliance findings extraction (OWASP Top 10, CWE mapping)
+- [ ] Integration with existing ETL pipeline architecture
+
+**Technical Details:**
+- **API Integration**: CheckMarx SAST REST API and CxSAST database access
+- **Data Types**: Code vulnerabilities, technology detection, dependency analysis
+- **Vulnerability Categories**: Injection flaws, authentication issues, sensitive data exposure
+- **Metadata**: Project information, scan configurations, remediation suggestions
+
+#### Story 3: Unified Application Security Profile Creation
+**As a** penetration tester  
+**I want** a comprehensive security profile for each application  
+**So that** I have a complete picture of the application's security posture before starting manual testing
+
+**Acceptance Criteria:**
+- [ ] Data correlation engine matches Invicti and CheckMarx results by application
+- [ ] Unified application profiles created with technology stack, vulnerabilities, and metadata
+- [ ] Vulnerability deduplication across SAST and DAST results
+- [ ] Risk scoring algorithm combining static and dynamic analysis results
+- [ ] Application fingerprinting for consistent identification across scans
+- [ ] Profile versioning to track changes over time
+
+**Technical Considerations:**
+- **Application Matching**: URL patterns, application names, project identifiers
+- **Data Normalization**: Standardize vulnerability classifications across tools
+- **Conflict Resolution**: Handle contradicting findings between SAST and DAST
+- **Storage Schema**: MongoDB collections for unified profiles and relationships
+
+#### Story 4: Pre-Assessment Intelligence and Recommendation Engine
+**As a** penetration tester  
+**I want** intelligent recommendations based on automated scan results  
+**So that** I can optimize my manual testing approach and focus on high-value areas
+
+**Acceptance Criteria:**
+- [ ] AI analysis of scan results to identify testing gaps and opportunities
+- [ ] Technology-specific testing recommendations based on identified stack
+- [ ] Vulnerability verification suggestions for automated findings
+- [ ] Manual testing prioritization based on risk scores and exploitability
+- [ ] Integration with existing LLama model for contextual recommendations
+- [ ] Historical assessment correlation (link to VAMP data when available)
+
+**Technical Implementation:**
+- **AI Processing**: LangChain workflows for scan result analysis
+- **Vector Embeddings**: Vulnerability descriptions and technology signatures
+- **Recommendation Categories**: 
+  - Verification testing for automated findings
+  - Technology-specific attack vectors
+  - Areas not covered by automated scans
+  - Business logic testing opportunities
+
+#### Story 5: Interactive Scan Result Query Interface
+**As a** penetration tester  
+**I want** to query and explore scan results through natural language  
+**So that** I can quickly understand application security posture and plan my testing approach
+
+**Acceptance Criteria:**
+- [ ] Natural language queries about application vulnerabilities and technologies
+- [ ] Contextual responses citing specific scan findings
+- [ ] Drill-down capabilities for detailed vulnerability information
+- [ ] Visual representation of application security posture
+- [ ] Comparison queries across different applications or scan dates
+- [ ] Export capabilities for findings and recommendations
+
+**Query Examples:**
+- "What web vulnerabilities were found in the customer portal application?"
+- "Show me all high-severity findings from the latest CheckMarx scan"
+- "What technologies are used in the payment system and what are common vulnerabilities for those?"
+- "Compare security posture between version 1.2 and 1.3 scans"
+
+#### Story 6: Vulnerability Intelligence and Exploit Context
+**As a** penetration tester  
+**I want** enriched vulnerability information with exploit context  
+**So that** I can understand the real-world impact and testing approaches for identified vulnerabilities
+
+**Acceptance Criteria:**
+- [ ] CVE mapping and CVSS scoring for identified vulnerabilities
+- [ ] Exploit availability and proof-of-concept references
+- [ ] Remediation guidance and testing verification methods
+- [ ] Impact analysis based on application context and technology stack
+- [ ] Integration with vulnerability databases and threat intelligence
+- [ ] Historical exploit trends for similar vulnerabilities
+
+**Technical Details:**
+- **Data Sources**: CVE databases, exploit databases, vendor advisories
+- **AI Enhancement**: LLama model analysis of vulnerability descriptions and contexts
+- **Real-time Updates**: Periodic refresh of vulnerability intelligence data
+- **Risk Calculation**: Dynamic risk scoring based on exploitability and business impact
+
+#### Story 7: Scan Result Monitoring and Alert System
+**As a** penetration testing team lead  
+**I want** to monitor new scan results and significant security changes  
+**So that** I can prioritize testing efforts and respond to emerging threats quickly
+
+**Acceptance Criteria:**
+- [ ] Real-time monitoring of new scan completions
+- [ ] Alert system for critical and high-severity vulnerabilities
+- [ ] Trend analysis for application security posture over time
+- [ ] Notification system for significant security changes
+- [ ] Dashboard for team-wide visibility of scan results and testing priorities
+- [ ] Integration with existing Kafka messaging system
+
+**Technical Implementation:**
+- **Event Streaming**: Kafka topics for scan completion events
+- **Alert Rules**: Configurable thresholds for vulnerability severity and counts
+- **Notification Channels**: Email, Slack, or dashboard notifications
+- **Analytics**: Time-series analysis of security trends
+
+#### Story 8: Testing Coverage Gap Analysis
+**As a** penetration tester  
+**I want** to identify areas not covered by automated scanning  
+**So that** I can focus manual testing efforts on untested attack surfaces
+
+**Acceptance Criteria:**
+- [ ] Analysis engine identifies potential testing gaps in automated scans
+- [ ] Business logic vulnerability identification (areas automated tools can't test)
+- [ ] Authentication and authorization testing recommendations
+- [ ] Client-side security testing suggestions beyond automated capabilities
+- [ ] API security testing gaps for complex authentication flows
+- [ ] Recommendations for social engineering and physical security aspects
+
+**Gap Analysis Categories:**
+- **Business Logic**: Application-specific workflows and processes
+- **Complex Authentication**: Multi-factor, SSO, custom authentication schemes
+- **Client-Side Security**: Advanced XSS, CSRF, DOM manipulation
+- **API Security**: Complex REST/GraphQL endpoints, authentication bypasses
+- **Infrastructure**: Network segmentation, server hardening
+
+## Technical Architecture Details
+
+### Data Integration Layer
+```python
+# Example integration architecture
+class ScanDataIntegrator:
+    def __init__(self):
+        self.invicti_client = InvictiAPIClient()
+        self.checkmarx_client = CheckMarxAPIClient()
+        self.data_processor = ScanDataProcessor()
+        
+    def sync_scan_results(self, app_id):
+        # Pull from both sources
+        invicti_data = self.invicti_client.get_scan_results(app_id)
+        checkmarx_data = self.checkmarx_client.get_scan_results(app_id)
+        
+        # Create unified profile
+        unified_profile = self.data_processor.correlate_results(
+            invicti_data, checkmarx_data
+        )
+        
+        return unified_profile
+```
+
+### Database Schema Design
+
+#### Application Profiles Collection (MongoDB)
+```json
+{
+  "_id": "app_123",
+  "application": {
+    "name": "Customer Portal",
+    "url": "https://portal.company.com",
+    "technology_stack": {
+      "web_server": "Apache/2.4.41",
+      "framework": "Django 3.2",
+      "database": "PostgreSQL 13",
+      "languages": ["Python", "JavaScript"],
+      "libraries": ["jQuery 3.6", "Bootstrap 4.5"]
+    }
+  },
+  "scan_results": {
+    "invicti": {
+      "scan_date": "2025-09-10T14:30:00Z",
+      "scan_id": "inv_scan_456",
+      "vulnerabilities": [
+        {
+          "type": "SQL Injection",
+          "severity": "High",
+          "location": "/login",
+          "description": "...",
+          "cvss": 8.1
+        }
+      ]
+    },
+    "checkmarx": {
+      "scan_date": "2025-09-09T16:45:00Z",
+      "project_id": "cx_proj_789",
+      "vulnerabilities": [
+        {
+          "type": "Hardcoded Password",
+          "severity": "Medium",
+          "file": "config/settings.py",
+          "line": 45,
+          "cwe": "CWE-798"
+        }
+      ]
+    }
+  },
+  "unified_analysis": {
+    "risk_score": 7.5,
+    "critical_findings": 2,
+    "testing_recommendations": [...],
+    "gap_analysis": [...]
+  }
+}
+```
+
+### API Integration Specifications
+
+#### Invicti API Integration
+- **Endpoints**: `/api/v2/scans`, `/api/v2/vulnerabilities`, `/api/v2/technologies`
+- **Authentication**: API token-based authentication
+- **Rate Limits**: Handle 100 requests/minute limitation
+- **Data Format**: JSON responses with pagination support
+
+#### CheckMarx API Integration
+- **Endpoints**: `/cxrestapi/sast/scans`, `/cxrestapi/sast/projects`
+- **Authentication**: OAuth 2.0 with refresh tokens
+- **Rate Limits**: Manage concurrent request limitations
+- **Data Format**: XML/JSON hybrid responses
+
+### Vector Store Enhancement
+```python
+# Vulnerability embedding strategy
+class VulnerabilityEmbedder:
+    def create_vulnerability_embedding(self, vulnerability):
+        # Combine multiple aspects for rich embeddings
+        text_components = [
+            vulnerability['description'],
+            vulnerability['type'],
+            vulnerability['location'],
+            ' '.join(vulnerability.get('technologies', [])),
+            vulnerability.get('impact_description', '')
+        ]
+        
+        combined_text = ' | '.join(text_components)
+        return self.llama_embedder.embed(combined_text)
+```
+
+## Success Metrics and KPIs
+
+### User Adoption Metrics
+- **Usage Rate**: % of penetration testers using scan integration features
+- **Query Volume**: Number of scan-related queries per assessment
+- **Time to First Insight**: Time from assessment start to first scan-based recommendation
+
+### Quality Metrics
+- **Recommendation Accuracy**: User feedback on scan-based suggestions
+- **Gap Identification**: % of manual findings in areas flagged as gaps
+- **Risk Prioritization**: Correlation between AI risk scores and actual findings
+
+### Technical Performance
+- **Data Freshness**: Time between scan completion and availability in AI system
+- **Query Response Time**: Sub-2-second response for scan result queries
+- **System Reliability**: 99.5% uptime for scan data integration services
+
+## Risk Considerations and Mitigation
+
+### Data Security Risks
+- **Sensitive Scan Data**: Implement encryption and access controls
+- **Cross-Application Data Leakage**: Strict data isolation by application and team
+- **Audit Requirements**: Comprehensive logging of all scan data access
+
+### Technical Risks
+- **API Dependencies**: Circuit breakers and fallback mechanisms
+- **Data Volume**: Efficient storage and indexing strategies for large scan datasets
+- **Version Compatibility**: Handle API changes and schema evolution
+
+### Operational Risks
+- **False Positives**: Clear distinction between automated findings and verified vulnerabilities
+- **Scan Coverage Gaps**: Transparent reporting of scan limitations and coverage
+- **Tool Reliability**: Backup strategies when primary scanning tools are unavailable
+
+## Implementation Roadmap
+
+### Phase 1: Foundation (Sprint 1-2)
+- Invicti and CheckMarx API/database connections
+- Basic data extraction and storage
+- Initial application profile creation
+
+### Phase 2: Intelligence Layer (Sprint 3-4)
+- Vulnerability correlation and deduplication
+- Risk scoring algorithm implementation
+- Basic query interface for scan results
+
+### Phase 3: AI Enhancement (Sprint 5-6)
+- Vector embeddings for vulnerability data
+- Intelligent recommendation engine
+- Gap analysis and testing suggestions
+
+### Phase 4: Advanced Features (Sprint 7-8)
+- Real-time monitoring and alerting
+- Advanced analytics and trend analysis
+- Full integration with existing chat interface
+
+This epic transforms raw security scan data into actionable intelligence, enabling penetration testers to work more efficiently and effectively by understanding the application's security landscape before beginning manual testing.
+
+---------------------------
 # Penetration Testing AI Assistant - VAMP Integration Epic
 
 ## Epic Overview
