@@ -1,244 +1,71 @@
-# Cyber Threat Intelligence Analysis Prototype - Features & Jira Stories
+# 4-Day GenAI Threat Hunting Workshop Agenda
 
-## High-Level Features
-
-### 1. Enhanced Multi-Modal PDF Parser for Threat Intelligence
-### 2. Technology Asset Matching System
-### 3. Splunk Index Knowledge Base Integration
-### 4. Threat Hunter Chat Interface
-### 5. Automated Splunk Query Generation
-
----
-
-## JIRA STORIES
-
-### **EPIC: CTI-001 - Cyber Threat Intelligence Analysis Prototype**
-**Description:** Develop a prototype system to parse cyber threat intelligence from PDFs/emails, identify affected technologies, match against bank's tech stack, and generate Splunk queries for threat hunting.
+## Day 1: Current State & Foundation
+| Time | Title | Description | Speaker(s) | Duration |
+|------|-------|-------------|-----------|----------|
+| 09:00 - 09:15 | Workshop Kickoff & Objectives | Welcome, introductions, workshop goals, and success criteria | Senior Tech Manager (GenAI Product Development) | 15 min |
+| 09:15 - 10:45 | Threat Hunting Use Cases & Current Workflows | Deep dive into current threat hunting processes, pain points, manual workflows, and investigation methodologies | Cyber Threat Hunters | 90 min |
+| 10:45 - 11:00 | Break | | | 15 min |
+| 11:00 - 12:30 | Enterprise Security Platform Capabilities | Overview of SIEM, SOAR, and Threat Intelligence Platform (TIP) capabilities, integrations, and data sources | Executive | 90 min |
+| 12:30 - 13:30 | Lunch | | | 60 min |
+| 13:30 - 15:00 | Vendor Landscape & GenAI Capabilities Assessment | Review of existing vendor GenAI offerings, gaps, and opportunities for differentiation | Executive | 90 min |
+| 15:00 - 15:15 | Break | | | 15 min |
+| 15:15 - 16:30 | Technical Architecture & Environment Overview | Current technical stack walkthrough: UI, Llama models, Nomic embeddings, MongoDB, Elastic vector store, OpenShift infrastructure | Senior Developers | 75 min |
+| 16:30 - 17:00 | Day 1 Recap & Day 2 Preparation | Summary of learnings, identification of priority use cases for prototyping, and team assignments | Product Owner | 30 min |
 
 ---
 
-### **Story 1: CTI-002 - Extend PDF Parser for Technology Extraction**
+## Day 2: Use Case Prioritization & Prototype Development - Query Intelligence
 
-**Title:** Enhance Multi-Modal PDF Parser to Extract Affected Technologies from Threat Intelligence
-
-**Description:**
-As a Cyber Threat Hunter, I need the existing PDF parser to identify and extract technology-related information (software, versions, CVEs, IoCs) from threat intelligence documents so that I can quickly understand what technologies are potentially affected.
-
-**Acceptance Criteria:**
-- [ ] Parser extracts technology names, versions, and CVE references from PDFs
-- [ ] Parser identifies IoCs (IPs, domains, file hashes, registry keys)
-- [ ] Parser handles both text and image-based content using Llama Vision
-- [ ] Extracted data is structured in JSON format with confidence scores
-- [ ] Parser processes at least 90% of common CTI PDF formats successfully
-
-**Technical Considerations:**
-- Extend existing Llama Vision prompts for technology extraction
-- Create new prompt templates for structured technology data extraction
-- Implement confidence scoring for extracted entities
-- Use existing Python/MongoDB infrastructure
-
-**Limitations:**
-- May miss technologies mentioned only in complex diagrams
-- Accuracy depends on document quality and format
-- Limited to technologies explicitly mentioned in documents
-
-**Story Points:** 5
+| Time | Title | Description | Speaker(s) | Duration |
+|------|-------|-------------|-----------|----------|
+| 09:00 - 09:30 | Day 1 Recap & Day 2 Objectives | Review of Day 1 insights and introduction to Day 2 development focus | Product Owner | 30 min |
+| 09:30 - 11:00 | Use Case Workshop: Natural Language Query Translation | Collaborative session to define requirements for translating threat hunter queries into SIEM/log search syntax (KQL, SPL, etc.) | Cyber Threat Hunters, Product Owner, Senior Developers | 90 min |
+| 11:00 - 11:15 | Break | | | 15 min |
+| 11:15 - 12:30 | Data Engineering: Vector Store Design & Data Pipeline | Design and implementation of vector embeddings for security logs, alert data, and threat intelligence; MongoDB and Elastic integration patterns | Data Engineering Engineers, Senior Developers | 75 min |
+| 12:30 - 13:30 | Lunch | | | 60 min |
+| 13:30 - 15:30 | Prototype Development Sprint 1 | Hands-on development: Natural language to query translation, RAG implementation with threat intelligence context | Senior Developers, Data Engineering Engineers | 120 min |
+| 15:30 - 15:45 | Break | | | 15 min |
+| 15:45 - 16:30 | Demo 1: Intelligent Query Assistant | Live demonstration of natural language query translation with sample threat hunting scenarios | Senior Developers | 45 min |
+| 16:30 - 17:00 | Feedback Session & Day 3 Planning | Stakeholder feedback, refinement priorities, and use case selection for Day 3 | Senior Tech Manager, Product Owner, Executive | 30 min |
 
 ---
 
-### **Story 2: CTI-003 - Implement Technology Asset Matching Service**
+## Day 3: Advanced Analytics & Alert Triage Automation
 
-**Title:** Build Technology Matching Service Against Bank's Asset Knowledge Base
-
-**Description:**
-As a Cyber Threat Hunter, I need to automatically match extracted threat intelligence technologies against our bank's technology inventory so that I can focus only on threats relevant to our infrastructure.
-
-**Acceptance Criteria:**
-- [ ] Service queries semantically searchable tech knowledge base using Nomic embeddings
-- [ ] Returns match results with similarity scores above 0.7 threshold
-- [ ] Handles technology aliases and version matching (e.g., "Apache 2.4.x" matches "Apache 2.4.41")
-- [ ] Processes batch queries efficiently (<2 seconds for 20 technologies)
-- [ ] Logs all matching activities for audit purposes
-
-**Technical Considerations:**
-- Integrate with existing Elastic vector datastore
-- Use Nomic embedding model for semantic similarity
-- Implement fuzzy matching for technology versions
-- Create RESTful API using Java/Spring Boot
-
-**Limitations:**
-- Depends on completeness of bank's technology knowledge base
-- May produce false positives with common technology names
-- Version matching logic may be imperfect for complex versioning schemes
-
-**Story Points:** 8
+| Time | Title | Description | Speaker(s) | Duration |
+|------|-------|-------------|-----------|----------|
+| 09:00 - 09:30 | Day 2 Recap & Refinement Discussion | Review of Demo 1 feedback and Day 3 development objectives | Product Owner | 30 min |
+| 09:30 - 11:00 | Use Case Workshop: Alert Triage & Enrichment | Define requirements for automated alert analysis, severity assessment, and contextualization using GenAI | Cyber Threat Hunters, Product Owner | 90 min |
+| 11:00 - 11:15 | Break | | | 15 min |
+| 11:15 - 12:30 | Integration Architecture: SIEM/SOAR/TIP Connectivity | Technical design for integrating GenAI capabilities with existing security platforms; API strategies and data flow patterns | Senior Developers, Data Engineering Engineers, Project Manager | 75 min |
+| 12:30 - 13:30 | Lunch | | | 60 min |
+| 13:30 - 15:30 | Prototype Development Sprint 2 | Development of alert triage assistant: automated analysis, threat correlation, false positive identification, and enrichment recommendations | Senior Developers, Data Engineering Engineers | 120 min |
+| 15:30 - 15:45 | Break | | | 15 min |
+| 15:45 - 16:30 | Demo 2: AI-Powered Alert Triage & Enrichment | Demonstration of automated alert analysis and intelligent enrichment using real alert samples | Senior Developers, Cyber Threat Hunters | 45 min |
+| 16:30 - 17:00 | Strategic Discussion: Value Realization & Metrics | Discussion of business value, KPIs, time savings potential, and ROI framework | Executive, Senior Tech Manager, Product Owner | 30 min |
 
 ---
 
-### **Story 3: CTI-004 - Build Splunk Index Knowledge Base**
+## Day 4: Investigation Assistance & Roadmap Planning
 
-**Title:** Create Semantically Searchable Splunk Index Knowledge Base with SIEM Integration
-
-**Description:**
-As a Cyber Threat Hunter, I need a searchable knowledge base of all Splunk indices mapped to technologies so that I can quickly identify relevant data sources for investigation.
-
-**Acceptance Criteria:**
-- [ ] Kafka consumer ingests Splunk index metadata from SIEM feed
-- [ ] Index descriptions and technology mappings stored in MongoDB
-- [ ] Vector embeddings generated using Nomic model and stored in Elastic
-- [ ] RESTful API provides semantic search across indices
-- [ ] Data pipeline updates knowledge base every 4 hours
-- [ ] Search returns top 5 relevant indices with confidence scores
-
-**Technical Considerations:**
-- Set up Kafka consumer for SIEM data integration
-- Create embedding pipeline for index descriptions
-- Design MongoDB schema for index metadata
-- Implement incremental updates to avoid full reprocessing
-
-**Limitations:**
-- Quality depends on SIEM metadata accuracy
-- Initial setup requires manual technology-to-index mapping validation
-- May miss newly created indices between update cycles
-
-**Story Points:** 13
+| Time | Title | Description | Speaker(s) | Duration |
+|------|-------|-------------|-----------|----------|
+| 09:00 - 09:30 | Day 3 Recap & Final Sprint Objectives | Review of progress and introduction to investigation workflow automation | Senior Tech Manager | 30 min |
+| 09:30 - 11:00 | Use Case Workshop: Investigation Playbook Automation | Define requirements for guided investigation workflows, automated evidence gathering, and threat narrative generation | Cyber Threat Hunters, Product Owner | 90 min |
+| 11:00 - 11:15 | Break | | | 15 min |
+| 11:15 - 12:30 | Prototype Development Sprint 3 | Development of investigation assistant: playbook recommendations, automated timeline generation, and incident summary capabilities | Senior Developers, Data Engineering Engineers | 75 min |
+| 12:30 - 13:30 | Lunch | | | 60 min |
+| 13:30 - 14:30 | Demo 3: Investigation Copilot & Threat Narrative | Comprehensive demonstration of end-to-end investigation assistance and automated reporting | Senior Developers, Cyber Threat Hunters | 60 min |
+| 14:30 - 14:45 | Break | | | 15 min |
+| 14:45 - 15:45 | Comprehensive Prototype Review | Walkthrough of all three capabilities integrated into unified threat hunting workflow | Product Owner, Senior Developers | 60 min |
+| 15:45 - 16:45 | Roadmap & Next Steps Planning | Product roadmap discussion, prioritization, resource requirements, pilot planning, and success metrics definition | Executive, Senior Tech Manager, Product Owner, Project Manager | 60 min |
+| 16:45 - 17:00 | Workshop Closing & Action Items | Summary of accomplishments, key takeaways, action item assignments, and next milestone planning | Senior Tech Manager, Executive | 15 min |
 
 ---
 
-### **Story 4: CTI-005 - Customize Chat UI for Threat Hunters**
-
-**Title:** Enhance Existing Chat UI with Threat Hunter Specific Features
-
-**Description:**
-As a Cyber Threat Hunter, I need a specialized chat interface that supports threat intelligence analysis workflows so that I can efficiently process CTI documents and initiate investigations.
-
-**Acceptance Criteria:**
-- [ ] Upload interface accepts PDF files and email attachments
-- [ ] Display extracted technologies in structured format with match status
-- [ ] Show relevant Splunk indices with rationale for selection
-- [ ] Generate and display Splunk queries with copy-to-clipboard functionality
-- [ ] Maintain conversation history for audit trail
-- [ ] Add "Threat Hunter Mode" toggle to existing UI
-
-**Technical Considerations:**
-- Extend existing React/JavaScript frontend
-- Add file upload components with drag-and-drop
-- Integrate with existing chat backend APIs
-- Implement responsive design for large data displays
-
-**Limitations:**
-- Limited to basic UI enhancements due to time constraints
-- No advanced visualization features
-- File size limited to 10MB for prototype
-
-**Story Points:** 5
-
----
-
-### **Story 5: CTI-006 - Implement Splunk Query Generator**
-
-**Title:** Build Automated Splunk Query Generation for Threat Hunting
-
-**Description:**
-As a Cyber Threat Hunter, I need automatically generated Splunk queries based on extracted IoCs and affected technologies so that I can quickly begin investigations without manual query construction.
-
-**Acceptance Criteria:**
-- [ ] Generate basic search queries using extracted IoCs (IPs, domains, hashes)
-- [ ] Include relevant index restrictions based on affected technologies
-- [ ] Create time-bounded queries (last 30 days default)
-- [ ] Generate both basic and advanced query variants
-- [ ] Validate query syntax before presentation
-- [ ] Include explanatory comments in generated queries
-
-**Technical Considerations:**
-- Create Splunk query templates using Jinja2
-- Use Llama Instruct model for query optimization
-- Implement query validation logic
-- Store query patterns in MongoDB for reuse
-
-**Limitations:**
-- Generates basic queries only (no complex correlations)
-- Limited to common IoC types
-- May require manual tuning for specific use cases
-- No query performance optimization
-
-**Story Points:** 8
-
----
-
-### **Story 6: CTI-007 - Integrate End-to-End Pipeline**
-
-**Title:** Build Complete CTI Analysis Pipeline Integration
-
-**Description:**
-As a Cyber Threat Hunter, I need a seamless end-to-end pipeline that processes uploaded CTI documents and provides actionable intelligence so that I can efficiently respond to emerging threats.
-
-**Acceptance Criteria:**
-- [ ] Single API endpoint orchestrates entire pipeline
-- [ ] Process completes within 30 seconds for typical PDF
-- [ ] Error handling for each pipeline stage with meaningful messages
-- [ ] Results cached in MongoDB for quick retrieval
-- [ ] Pipeline status tracking and progress indicators
-- [ ] Integration testing across all components
-
-**Technical Considerations:**
-- Implement async processing using Python asyncio
-- Add comprehensive error handling and logging
-- Create pipeline orchestrator service
-- Use existing Kafka for inter-service communication
-
-**Limitations:**
-- No parallel processing of multiple documents
-- Limited error recovery mechanisms
-- Basic caching strategy only
-- No pipeline performance metrics
-
-**Story Points:** 8
-
----
-
-## **Technical Architecture Summary**
-
-**Core Technologies:**
-- **LLMs:** Llama Vision + Instruct models
-- **Embeddings:** Nomic embedding model
-- **Vector Store:** Elasticsearch
-- **Message Queue:** Kafka
-- **Database:** MongoDB
-- **Backend:** Python (FastAPI) + Java (Spring Boot)
-- **Frontend:** Existing React-based chat UI
-
-**Data Flow:**
-1. PDF upload → Multi-modal parser → Technology extraction
-2. Extracted technologies → Asset matching service → Bank relevance check
-3. Relevant technologies → Splunk index search → Index identification
-4. IoCs + Indices → Query generator → Splunk queries
-5. Results → Chat UI → Threat Hunter review
-
-**Prototype Limitations:**
-- No production-grade security or scalability
-- Basic error handling and monitoring
-- Limited to common document formats
-- Manual validation required for accuracy
-- No advanced analytics or reporting features
-
-
-
-----------------------------------------------------------------
-Opening & Context Setting
-"I'm Ricardo, leading our Singapore-based GenAI cybersecurity team and serving as tech lead for our flagship PenPal assistant platform. Having transitioned from EMEA operations a year ago, I've been focused on establishing our APAC cybersecurity AI capabilities and leveraging the exceptional talent pool across this region."
-Core Platform Overview
-"We're building a comprehensive Cyber GenAI Platform that's transforming how our security teams operate globally. This platform combines on-premises open-source LLMs running on our AI HPC infrastructure with Azure-hosted OpenAI APIs, giving us both control and cutting-edge capabilities."
-"The platform delivers four core capabilities: NLP-based semantic search across our security data lakes, intelligent summarization of threat intelligence, automated content generation for security documentation, and GenAI-augmented data analysis that's revolutionizing how we interpret security events."
-Technical Innovation & Methodology
-"Our architecture leverages advanced methodologies including RAG for contextual information retrieval, sophisticated tool calling for automated security workflows, Model Context Protocol for seamless AI integration, robust guardrails for security compliance, and targeted fine-tuning for cybersecurity-specific use cases."
-APAC Team Value Proposition
-"The APAC and India talent pool has been instrumental in this platform's development. Our distributed team brings deep technical expertise in AI/ML, combined with around-the-clock development cycles that accelerate our delivery. The cost-effectiveness and technical depth available in this region allows us to compete with any global AI initiative."
-Flagship Product: PenPal
-"PenPal, our GenAI assistant for penetration testers, exemplifies our platform's potential. It's reducing testing time by 40% while improving coverage quality. This success story demonstrates how APAC-developed solutions can drive global cybersecurity value."
-Regional Growth Vision (Subtle)
-"We're seeing strong demand signals across APAC for these capabilities. The region's digital transformation pace creates unique opportunities for cybersecurity AI applications. Our current Singapore hub positions us well to support regional expansion as business cases mature."
-Competitive Advantage
-"Our hybrid cloud-on-premises approach addresses regulatory requirements across APAC markets while maintaining the agility to leverage latest commercial models. This architectural decision, driven by our APAC team's understanding of regional compliance needs, differentiates us from purely cloud-based competitors."
-Closing Value Statement
-"We're not just building AI tools – we're creating a platform that scales cybersecurity expertise globally while being developed and refined by world-class APAC talent. The early success metrics and stakeholder feedback position us for significant expansion of both capabilities and team size."
+## Key Success Criteria
+- **3 working prototype demonstrations** showcasing tangible GenAI value
+- **Clear ROI framework** with measurable efficiency improvements
+- **Actionable product roadmap** with defined next steps
+- **Stakeholder alignment** on value proposition and resource commitment
