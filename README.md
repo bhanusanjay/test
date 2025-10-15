@@ -1,6 +1,81 @@
+Slide - 1
+
+Extract & Understand
+Open Source LLM analyzes threat intelligence documents
+→ Identifies affected technologies, vulnerabilities, and attack indicators
+→ Nomic embeddings enable semantic understanding beyond keyword matching
+2
+Validate Exposure
+Cross-reference against organizational assets
+→ Checks extracted technologies against our environment (demo: Artifactory data)
+→ Filters out irrelevant threats, focuses on actual exposure
+3
+Generate Hunt Queries
+Automatically create Splunk queries tailored to our environment
+→ Knowledge base built from 100+ parsed Splunk indices
+→ Queries ready for immediate threat hunting execution# Day 1 Workshop Summary: AI for Cyber Threat Hunters
+
+Slide - 2
+
+AI & ML Layer
+Open Source LLMs for intelligence extraction and query generation
+Nomic Embeddings for semantic technology matching
+Data & Interface
+Cyber GenAI UI for intuitive interaction
+Splunk Knowledge Base parsed from 100+ indices
+Data Flow Architecture
+Threat Intel
+PDFs, Reports
+→
+LLM Processing
+Extract + Embed
+→
+Asset Validation
+Environment Check
+→
+Splunk Queries
+Ready to Hunt
+Demo Environment
+Prototype validated using sample Artifactory data and production-representative Splunk log patterns
+
+Expected Impact
+Speed to Detection
+Reduce intelligence-to-hunt time from hours to minutes
+Consistency
+Eliminate variability in query quality across threat hunters
+Coverage
+Ensure comprehensive detection across all affected technologies
+Analyst Efficiency
+Free hunters to focus on analysis, not query construction
+Immediate Next Steps
+1
+Incorporate Day 1 Feedback
+Refine extraction accuracy and query templates
+2
+Expand Knowledge Base
+Include additional Splunk indices and query patterns
+3
+Production Integration
+Connect to live asset inventory and Splunk environment
+4
+Pilot with Live Threats
+Test against current threat intelligence feeds
+Strategic Value
+This prototype demonstrates how GenAI can transform threat intelligence from static reports into dynamic, actionable defense. By automating the translation layer, we enable threat hunters to operate at machine speed while maintaining human judgment where it matters most.Slide -3 
 
 
-# Day 1 Workshop Summary: AI for Cyber Threat Hunters
+
+
+
+
+
+
+
+
+
+
+
+
 **Date:** [Insert Date]  
 **Attendees:** Cross-functional team including Cyber Threat Defense, Threat Intelligence, and GenAI Product Development teams
 
