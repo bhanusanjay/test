@@ -1,71 +1,91 @@
-# 4-Day GenAI Threat Hunting Workshop Agenda
-
-## Day 1: Current State & Foundation
-| Time | Title | Description | Speaker(s) | Duration |
-|------|-------|-------------|-----------|----------|
-| 09:00 - 09:15 | Workshop Kickoff & Objectives | Welcome, introductions, workshop goals, and success criteria | Senior Tech Manager (GenAI Product Development) | 15 min |
-| 09:15 - 10:45 | Threat Hunting Use Cases & Current Workflows | Deep dive into current threat hunting processes, pain points, manual workflows, and investigation methodologies | Cyber Threat Hunters | 90 min |
-| 10:45 - 11:00 | Break | | | 15 min |
-| 11:00 - 12:30 | Enterprise Security Platform Capabilities | Overview of SIEM, SOAR, and Threat Intelligence Platform (TIP) capabilities, integrations, and data sources | Executive | 90 min |
-| 12:30 - 13:30 | Lunch | | | 60 min |
-| 13:30 - 15:00 | Vendor Landscape & GenAI Capabilities Assessment | Review of existing vendor GenAI offerings, gaps, and opportunities for differentiation | Executive | 90 min |
-| 15:00 - 15:15 | Break | | | 15 min |
-| 15:15 - 16:30 | Technical Architecture & Environment Overview | Current technical stack walkthrough: UI, Llama models, Nomic embeddings, MongoDB, Elastic vector store, OpenShift infrastructure | Senior Developers | 75 min |
-| 16:30 - 17:00 | Day 1 Recap & Day 2 Preparation | Summary of learnings, identification of priority use cases for prototyping, and team assignments | Product Owner | 30 min |
+# Day 1 Workshop Summary: AI for Cyber Threat Hunters
+**Date:** [Insert Date]  
+**Attendees:** Cross-functional team including Cyber Threat Defense, Threat Intelligence, and GenAI Product Development teams
 
 ---
 
-## Day 2: Use Case Prioritization & Prototype Development - Query Intelligence
+## Workshop Kickoff & Introductions
 
-| Time | Title | Description | Speaker(s) | Duration |
-|------|-------|-------------|-----------|----------|
-| 09:00 - 09:30 | Day 1 Recap & Day 2 Objectives | Review of Day 1 insights and introduction to Day 2 development focus | Product Owner | 30 min |
-| 09:30 - 11:00 | Use Case Workshop: Natural Language Query Translation | Collaborative session to define requirements for translating threat hunter queries into SIEM/log search syntax (KQL, SPL, etc.) | Cyber Threat Hunters, Product Owner, Senior Developers | 90 min |
-| 11:00 - 11:15 | Break | | | 15 min |
-| 11:15 - 12:30 | Data Engineering: Vector Store Design & Data Pipeline | Design and implementation of vector embeddings for security logs, alert data, and threat intelligence; MongoDB and Elastic integration patterns | Data Engineering Engineers, Senior Developers | 75 min |
-| 12:30 - 13:30 | Lunch | | | 60 min |
-| 13:30 - 15:30 | Prototype Development Sprint 1 | Hands-on development: Natural language to query translation, RAG implementation with threat intelligence context | Senior Developers, Data Engineering Engineers | 120 min |
-| 15:30 - 15:45 | Break | | | 15 min |
-| 15:45 - 16:30 | Demo 1: Intelligent Query Assistant | Live demonstration of natural language query translation with sample threat hunting scenarios | Senior Developers | 45 min |
-| 16:30 - 17:00 | Feedback Session & Day 3 Planning | Stakeholder feedback, refinement priorities, and use case selection for Day 3 | Senior Tech Manager, Product Owner, Executive | 30 min |
+- Workshop commenced with introductions from all participants across threat hunting, threat intelligence, and development teams
+- Established 4-day agenda focused on practical AI applications for cyber threat hunting operations
+- Set collaborative tone for knowledge sharing between technical and operational teams
 
 ---
 
-## Day 3: Advanced Analytics & Alert Triage Automation
+## Targeted Use Case Definition
 
-| Time | Title | Description | Speaker(s) | Duration |
-|------|-------|-------------|-----------|----------|
-| 09:00 - 09:30 | Day 2 Recap & Refinement Discussion | Review of Demo 1 feedback and Day 3 development objectives | Product Owner | 30 min |
-| 09:30 - 11:00 | Use Case Workshop: Alert Triage & Enrichment | Define requirements for automated alert analysis, severity assessment, and contextualization using GenAI | Cyber Threat Hunters, Product Owner | 90 min |
-| 11:00 - 11:15 | Break | | | 15 min |
-| 11:15 - 12:30 | Integration Architecture: SIEM/SOAR/TIP Connectivity | Technical design for integrating GenAI capabilities with existing security platforms; API strategies and data flow patterns | Senior Developers, Data Engineering Engineers, Project Manager | 75 min |
-| 12:30 - 13:30 | Lunch | | | 60 min |
-| 13:30 - 15:30 | Prototype Development Sprint 2 | Development of alert triage assistant: automated analysis, threat correlation, false positive identification, and enrichment recommendations | Senior Developers, Data Engineering Engineers | 120 min |
-| 15:30 - 15:45 | Break | | | 15 min |
-| 15:45 - 16:30 | Demo 2: AI-Powered Alert Triage & Enrichment | Demonstration of automated alert analysis and intelligent enrichment using real alert samples | Senior Developers, Cyber Threat Hunters | 45 min |
-| 16:30 - 17:00 | Strategic Discussion: Value Realization & Metrics | Discussion of business value, KPIs, time savings potential, and ROI framework | Executive, Senior Tech Manager, Product Owner | 30 min |
+- Workshop centered around specific threat hunting use case to drive practical outcomes
+- Use case defined to align AI capabilities with operational threat hunting requirements
+- Framework established for evaluating AI solution effectiveness against real-world scenarios
 
 ---
 
-## Day 4: Investigation Assistance & Roadmap Planning
+## Offensive AI Conference Insights (Presented by Josh & Don)
 
-| Time | Title | Description | Speaker(s) | Duration |
-|------|-------|-------------|-----------|----------|
-| 09:00 - 09:30 | Day 3 Recap & Final Sprint Objectives | Review of progress and introduction to investigation workflow automation | Senior Tech Manager | 30 min |
-| 09:30 - 11:00 | Use Case Workshop: Investigation Playbook Automation | Define requirements for guided investigation workflows, automated evidence gathering, and threat narrative generation | Cyber Threat Hunters, Product Owner | 90 min |
-| 11:00 - 11:15 | Break | | | 15 min |
-| 11:15 - 12:30 | Prototype Development Sprint 3 | Development of investigation assistant: playbook recommendations, automated timeline generation, and incident summary capabilities | Senior Developers, Data Engineering Engineers | 75 min |
-| 12:30 - 13:30 | Lunch | | | 60 min |
-| 13:30 - 14:30 | Demo 3: Investigation Copilot & Threat Narrative | Comprehensive demonstration of end-to-end investigation assistance and automated reporting | Senior Developers, Cyber Threat Hunters | 60 min |
-| 14:30 - 14:45 | Break | | | 15 min |
-| 14:45 - 15:45 | Comprehensive Prototype Review | Walkthrough of all three capabilities integrated into unified threat hunting workflow | Product Owner, Senior Developers | 60 min |
-| 15:45 - 16:45 | Roadmap & Next Steps Planning | Product roadmap discussion, prioritization, resource requirements, pilot planning, and success metrics definition | Executive, Senior Tech Manager, Product Owner, Project Manager | 60 min |
-| 16:45 - 17:00 | Workshop Closing & Action Items | Summary of accomplishments, key takeaways, action item assignments, and next milestone planning | Senior Tech Manager, Executive | 15 min |
+- Josh and Don delivered summaries from recent Offensive AI conference attendance
+- Key takeaways covered emerging offensive AI techniques and threat landscape evolution
+- Insights provided context for defensive AI strategies and potential adversarial use of AI in cyber operations
+- Discussion highlighted importance of understanding offensive capabilities to build robust defensive measures
 
 ---
 
-## Key Success Criteria
-- **3 working prototype demonstrations** showcasing tangible GenAI value
-- **Clear ROI framework** with measurable efficiency improvements
-- **Actionable product roadmap** with defined next steps
-- **Stakeholder alignment** on value proposition and resource commitment
+## Threat Intelligence Team Use Cases
+
+- Threat Intelligence team presented high-level overview of potential AI use cases for their operations
+- Multiple use cases identified spanning threat analysis, intelligence gathering, and automated reporting
+- **Status:** Use cases pending internal prioritization by Cyber Threat Defense team
+- Follow-up required to align use cases with organizational priorities and resource availability
+
+---
+
+## Development Team Prototype Demo: Threat Intelligence to Splunk Query Generation
+
+**Use Case Demonstrated:**
+- Extract affected technologies from threat intelligence documents
+- Cross-reference extracted technologies against organizational asset inventory
+- Automatically generate Splunk queries for technologies confirmed as present in the environment
+
+**Technical Implementation:**
+- **UI Platform:** Cyber GenAI UI
+- **AI Models:** Open source LLMs for extraction and query generation
+- **Embedding Model:** Nomic embedding model for semantic understanding
+- **Knowledge Base:** Splunk query knowledge base constructed by parsing sample logs from approximately 100 indices using LLM
+- **Sample Data:** Demo utilized sample Artifactory data for proof of concept
+
+**Demo Workflow:**
+1. Ingest threat intelligence document
+2. LLM extracts mentioned technologies and vulnerabilities
+3. System checks technologies against organizational environment
+4. For confirmed matches, generates preliminary Splunk queries for threat hunting
+5. Queries based on learned patterns from parsed log samples across 100 indices
+
+**Feedback Received:**
+- Prototype well-received with constructive feedback provided by workshop participants
+- Specific improvement areas identified for Day 2 iteration
+- Team committed to incorporating feedback and demonstrating enhanced version
+
+---
+
+## Additional Technology Discussion
+
+- Elasticsearch discussed as potential component for search and analytics capabilities
+- Exploration of integration opportunities with existing technology stack
+
+---
+
+## Day 1 Outcomes & Next Steps
+
+- Successful establishment of common understanding across teams on AI capabilities for threat hunting
+- Clear use case priorities emerging from collaborative discussion
+- Development team has actionable feedback for prototype enhancement
+- Foundation laid for Day 2 deep dives and iterative development
+
+**Action Items:**
+- Development team to implement feedback and prepare updated demo for Day 2
+- Cyber Threat Defense team to complete prioritization of Threat Intelligence use cases
+- All teams to prepare for deeper technical discussions based on Day 1 insights
+
+---
+
+**Prepared by:** [Your Name]  
+**Distribution:** Executive Leadership & GenAI Product Development Team
