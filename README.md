@@ -1,3 +1,127 @@
+
+
+# GenAI Development Estimation Templates
+
+## UI Development Estimation
+
+| **Activity Category** | **Effort (Person-Hours)** | **% of Total** | **Notes** |
+|----------------------|---------------------------|----------------|-----------|
+| **Pre-Development** | | 15-20% | Requirements, prototyping, design, API specs |
+| **Development** | | 45-50% | Frontend, Backend APIs, Database implementation |
+| **Testing** | | 20-25% | Functional, regression, performance testing |
+| **UAT & Coordination** | | 10-15% | UAT prep, execution, sign-off |
+| **Release & Production** | | 5-10% | Deployment, validation, hypercare |
+| **Contingency Buffer** | | 10-15% | Risk mitigation, unknowns |
+| **TOTAL** | | **100%** | |
+
+---
+
+## Data Source Integration Estimation (Per Source)
+
+| **Activity Category** | **Base Effort (Person-Hours)** | **Complexity Multiplier** | **Adjusted Effort** | **% of Total** | **Notes** |
+|----------------------|-------------------------------|--------------------------|---------------------|----------------|-----------|
+| **Pre-Development** | | × | | 20-25% | Analysis, contracts, access setup |
+| **Development** | | × | | 40-45% | Integration, processing, MCP/RAG pipeline |
+| **Testing** | | × | | 15-20% | Functional, regression, performance |
+| **Governance** | | × | | 10-15% | Model Risk Management, compliance review |
+| **UAT & Coordination** | | × | | 5-10% | UAT execution, sign-off |
+| **Release & Production** | | × | | 5-10% | Deployment, validation, monitoring |
+| **Contingency Buffer** | | × | | 15-20% | Unknown data sources, quality issues |
+| **TOTAL** | | | | **100%** | |
+
+### Complexity Multipliers (Apply to Base Effort)
+
+| **Data Source Type** | **Multiplier** | **Examples** |
+|---------------------|----------------|--------------|
+| Simple/Standard | 1.0x | CSV files, REST APIs with documentation |
+| Moderate | 1.5x | SQL databases, cloud storage, standard SaaS APIs |
+| Complex | 2.0x | Legacy systems, custom protocols, no documentation |
+| Highly Complex | 2.5-3.0x | Real-time streams, multiple hops, data quality issues, PII-heavy |
+
+---
+
+## Prompt Engineering & LLM Selection Estimation
+
+| **Activity Category** | **Effort (Person-Hours)** | **% of Total** | **Notes** |
+|----------------------|---------------------------|----------------|-----------|
+| **Pre-Development** | | 25-30% | Use case definition, LLM evaluation, strategy design |
+| **Development** | | 35-40% | Prompt creation, testing, optimization, management system |
+| **Testing** | | 15-20% | Functional, regression, performance, evaluation framework |
+| **UAT & Coordination** | | 10-15% | User validation, feedback incorporation |
+| **Release & Production** | | 5-10% | Deployment, monitoring, continuous improvement |
+| **Contingency Buffer** | | 10-15% | Model changes, prompt drift, iteration cycles |
+| **TOTAL** | | **100%** | |
+
+---
+
+## Activity Breakdown Reference
+
+### Pre-Development Activities
+
+| **UI Development** | **Data Integration** | **Prompt Engineering** |
+|-------------------|---------------------|------------------------|
+| • Requirements gathering<br>• Wireframing<br>• UI/UX design<br>• API design<br>• Database schema design<br>• Technical specifications | • Data source analysis<br>• Data contracts & SLAs<br>• Access implementation<br>• Data quality assessment<br>• Compliance review | • Use case definition<br>• LLM landscape analysis<br>• Model evaluation & selection<br>• Prompt strategy design<br>• Success criteria definition |
+
+### Development Activities
+
+| **UI Development** | **Data Integration** | **Prompt Engineering** |
+|-------------------|---------------------|------------------------|
+| • Frontend development<br>• Backend API development<br>• Database implementation<br>• API integration<br>• Real-time updates<br>• Error handling | • ETL/ELT pipeline development<br>• Data transformation<br>• Data processing & cleansing<br>• Vector store setup<br>• MCP/RAG pipeline implementation<br>• Data validation rules | • Prompt development<br>• Few-shot examples<br>• Advanced techniques (RAG, CoT)<br>• Prompt optimization<br>• Prompt management system<br>• A/B testing framework |
+
+### Post-Development Activities
+
+| **UI Development** | **Data Integration** | **Prompt Engineering** |
+|-------------------|---------------------|------------------------|
+| • All testing phases<br>• UAT preparation & execution<br>• Production deployment<br>• Post-production validation<br>• Hypercare support<br>• Documentation | • All testing phases<br>• Model Risk Governance<br>• UAT coordination<br>• Production deployment<br>• Data quality monitoring<br>• Pipeline optimization | • All testing phases<br>• Evaluation framework<br>• UAT coordination<br>• Production deployment<br>• Response monitoring<br>• Continuous improvement |
+
+---
+
+## PI Capacity Planning (Quick Reference)
+
+| **Metric** | **Value** | **Notes** |
+|-----------|----------|-----------|
+| PI Duration | 10-12 weeks | Standard quarterly planning |
+| Sprints per PI | 5-6 sprints | 2-week sprints |
+| Hours per Person/Sprint | 60-70 hours | After meetings/ceremonies |
+| Velocity Factor | 70-80% | Realistic capacity |
+| **Capacity per Person/PI** | **~450-550 hours** | Planning baseline |
+
+### Example Calculation
+```
+Team of 5 × 500 hours/person = 2,500 person-hours available per PI
+```
+
+---
+
+## Estimation Guidelines
+
+### How to Use These Templates
+
+1. **Start with base estimates** for each activity category
+2. **Apply complexity multipliers** for data sources based on type
+3. **Sum totals** to get overall effort per component
+4. **Divide by team capacity** to determine PI duration
+5. **Review percentages** - adjust if significantly different from guidelines
+
+### Risk Factors (Apply Additional Buffers)
+
+| **Factor** | **Additional Buffer** |
+|-----------|---------------------|
+| New technology/first GenAI project | +20-30% |
+| Regulated industry (finance, healthcare) | +15-25% |
+| Distributed/offshore teams | +15-20% |
+| Legacy system integration | +20-30% |
+| Unclear requirements | +25-35% |
+
+---
+
+**Document Version:** 2.0 (Compact)  
+**Last Updated:** December 2025
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # GenAI Development Estimation Templates
 
 ## Template 1: UI Development Estimation
